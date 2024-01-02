@@ -1,0 +1,28 @@
+<div class="modal" id="exampleModalLive" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="card shadow border-0 rounded-3 mb-5">
+            <div class="card-body">
+            <h4 class="card-title mb-4 text-gradient">Add a New Password Entry</h4>  
+                <form id="new_entry_form" method="post">
+                    <!-- Site input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" name="entry_url" />
+                        <label for="site">Site</label>
+                    </div>
+                    <!-- Username input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" name="entry_username"/>
+                        <label for="username">Username</label>
+                    </div>
+                    <!-- Password input-->
+                    <div class="form-group form-floating mb-3 rounded-4">
+                        <input class="form-control" type="text" id="password-field" name="entry_password"/>
+                        <label for="password">Password</label>
+                    </div>
+                     <!-- Submit Button-->
+                    <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Add Entry</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>

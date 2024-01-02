@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+<section class="py-5">
+    <div class="container px-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Send Password Reset Instructions</span></h1>
+        </div>
+    </div>
+    <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card shadow border-0 rounded-4 mb-5">
+                    <div class="card-body p-5">
+                    <h4 class="card-title mb-4">Recover Your Password</h4>  
+                        <form method="POST" name="forgot_password_form">
+                            <!-- Email input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" type="text" name="account_email"/>
+                                <label for="account_email">Email on Your Account</label>
+                            </div>
+                            <!-- Submit Button-->
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg mb-3" id="submitButton" type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+{% endblock %} 
+

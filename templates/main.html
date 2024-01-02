@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block content %}
+            <!-- Page Content-->
+            <div class="container px-5 my-5">
+                <div class="text-center mb-3">
+                    <h1 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Your Passwords</span></h1>
+                    
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                          <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="form-floating">
+                                <input class="form-control" type="text" name="search_term" id="search_term" onkeyup="filter_me()"/>
+                                <label for="search">Search</label>
+                            </div>
+                            <a class="btn btn-outline-dark px-4 py-3" href="{{ url_for('add_new_entry') }}">
+                                <div class="d-inline-block bi bi-plus-circle-fill me-2"></div>
+                                New Entry
+                            </a>  
+                        </div>
+                        
+                        <!-- Modal for Add -->
+                        
+                        
+
+                        <!-- Experience Section-->
+                        <section id="card-list">
+                            <!-- Entry Card -->
+                            {% for entry in all_entries %}
+                            <div class="card shadow border-0 rounded-1 mb-5">
+                                <div class="card-body p-5">
+                                <h4 class="card-title mb-4">{{ entry.site }}</h4>  
+                                    <form id="entry_cards">
+                                        <!-- Email input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" type="text" value="{{ entry.site_username }}" readonly/>
+                                            <label for="username">Username</label>
+                                        </div>
+                                        <!-- Password input-->
+  
+                                        <div class="input-group input-group-joined form-floating">
+                                            <input class="form-control pe-0 pwd" type="password" id="password-field-{{ entry.id }}" aria-label="password" value="{{ entry.site_password }}" readonly >
+                                            <label for="password-field-{{ entry.id }}">Password</label> 
+                                            <div class="input-group-text" onclick="showPass({{ entry.id }})"><i class="bi bi-eye-slash-fill" id="eye-toggle-{{ entry.id }}" ></i></div>
+                                        </div>
+                                
+
+                                    </form>
+                                    <div class="small text-black-50">Last changed on: {{ entry.last_updated }}
+                                        <p><a href="edit/{{entry.id}}" class="card-link">Edit</a>  <a href="delete/{{entry.id}}" onclick="return confirm('Are you sure you wish to delete?');" class="card-link" >Delete</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %} 
+

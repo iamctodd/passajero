@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+            <!-- Section-->
+            <section class="py-5">
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Import Passwords from a File</span></h1>
+                    </div>
+                </div>
+                <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                <h4 class="card-title mb-4">Accepted Filetypes: csv, txt, and tsv</h4>  
+                                <div><p>The format needs to be: <pre class="text-bg-dark">site1, username1, password1<br>site2, username2, password2</pre></p></div>
+                                    <form id="import_form" method="post" enctype="multipart/form-data">
+                                        <!-- Site input-->
+                                        <div>
+                                            <label for="importFile" class="form-label">Click to select a file</label>
+                                            <input class="form-control form-control-lg mb-3" id="importFile" type="file" name="file" accept=".csv, .txt">
+                                          </div>
+                                        <!-- Submit Button-->
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary btn-lg mb-3" id="submitButton" type="submit">Import Passwords</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        {% endblock %} 
+        
+                     
