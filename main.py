@@ -32,7 +32,7 @@ def get_all_entries():
     result = db.session.execute(db.select(Entry))
     all_entries = result.scalars().all()
     return all_entries
-
+git pull 
 def get_user_entries(user):
     result = db.session.execute(db.select(Entry).where(Entry.user_id == user))
     user_entries = result.scalars().all()
